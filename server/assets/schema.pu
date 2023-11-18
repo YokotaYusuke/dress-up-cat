@@ -1,0 +1,16 @@
+@startuml dress-up-cat
+left to right direction
+
+class outfit {
+  id : increments [PK]
+  outfit_name : string
+  create_date : date  
+  ..
+  cat_url : string
+  tops_url : string
+  bottoms_url : string
+  item_url : string
+  room_url : string  
+}
+
+@enduml
