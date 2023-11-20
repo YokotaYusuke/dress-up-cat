@@ -22,10 +22,14 @@ app.get('/api', (req, res) => {
 });
 
 app.post('/album', (req, res) => {
-  console.log('req.body===>', req.body);
   req.body['id'] = dataObj.length;
-  console.log('サーバー側', dataObj);
+  // console.log('サーバー側', dataObj);
+
   dataObj.push(req.body);
+  res.send(dataObj);
+});
+
+app.get('/allData', (req, res) => {
   res.send(dataObj);
 });
 

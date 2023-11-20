@@ -9,6 +9,7 @@ export default function MiddleSelect({ currentView, roomSelect, catSelect, itemS
     } else if (event.target.alt === 'btn-tops') {
       setSelectItem('tops');
     } else if (event.target.alt === 'btn-bottoms') {
+      console.log('bottoms来てる？');
       setSelectItem('bottoms');
     } else if (event.target.alt === 'btn-reset') {
       setSelectItem(null);
@@ -20,7 +21,7 @@ export default function MiddleSelect({ currentView, roomSelect, catSelect, itemS
       {currentView === 'SELECT' ? <img src={roomSelect} className="bg" alt="bg-room" /> : <></>}
       {currentView === 'SELECT' && catSelect ? <img src={catSelect} className="select__cat" alt="bg-start" /> : <></>}
       {currentView === 'SELECT' && itemSelect ? <img src={itemSelect} className="select__cat" alt="bg-start" /> : <></>}
-      {currentView === 'SELECT' && topsSelect ? <img src={topsSelect} className="select__cat" alt="bg-start" /> : <></>}
+      {currentView === 'SELECT' && topsSelect ? <img src={topsSelect} className="select__cat-tops" alt="bg-start" /> : <></>}
       {currentView === 'SELECT' && bottomsSelect ? <img src={bottomsSelect} className="select__cat" alt="bg-start" /> : <></>}
       <div className="main__btn-container">
         {currentView === 'SELECT' ? <img src="../img/btn/btn-room.png" className="btn" alt="btn-room" onClick={handleLeftBtnClick} /> : <></>}

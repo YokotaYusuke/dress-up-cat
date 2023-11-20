@@ -36,6 +36,15 @@ body {
   height: 100%;
 }
 
+.select__cat-tops {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 100%;
+  z-index: 50;
+}
+
 .left-container {
   flex: 1;
   background: rgb(184, 181, 128);
@@ -77,6 +86,7 @@ body {
   height: 30%;
   background: #ffffff;
   cursor: pointer;
+  z-index: 50;
 }
 
 .main__btn-container {
@@ -84,6 +94,7 @@ body {
   top: 30%;
   right: 2%;
   width: 10%;
+  z-index: 200;
 }
 
 .btn {
@@ -93,10 +104,10 @@ body {
 }
 
 .main__album-container {
-  background: rgba(14, 99, 112, 0.5);
+  /* background: rgba(14, 99, 112, 0.5); */
   width: 90%;
   position: absolute;
-  top: 50%;
+  top: 53%;
   left: 50%;
   transform: translate(-50%, -50%);
   height: 90%;
@@ -122,4 +133,12 @@ body {
   bottom: 0px;
   color: #ffffff;
   background: rgba(20, 20, 20, 0.562);
+}
+
+.main__album-btn {
+  position: absolute;
+  top: 2%;
+  right: 5%;
+  width: 8%;
+  cursor: pointer;
 }

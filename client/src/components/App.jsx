@@ -14,10 +14,7 @@ function App() {
   const [roomSelect, setRoomSelect] = useState('../img/room/room-1.png'); // '../img/bg/bg-start.JPG'
   const [outfitData, setOutfitData] = useState([]);
 
-  const serverUrl = 'http://localhost:8080'; // サーバー側のURL
-
-  const handleBtnClick = async () => {
-    await fetch(`${serverUrl}/api`, { method: 'GET' });
+  const handleBtnClick = () => {
     setCurrentView('SELECT');
   };
 
@@ -31,7 +28,7 @@ function App() {
 
   return (
     <>
-      <LeftSidebar currentView={currentView} setCurrentView={setCurrentView} />
+      <LeftSidebar currentView={currentView} setCurrentView={setCurrentView} setOutfitData={setOutfitData} />
       <Middle currentView={currentView} setSelectItem={setSelectItem} handleBtnClick={handleBtnClick} roomSelect={roomSelect} catSelect={catSelect} itemSelect={itemSelect} topsSelect={topsSelect} bottomsSelect={bottomsSelect} handleResetClick={handleResetClick} outfitData={outfitData} setOutfitData={setOutfitData} />
       <RightSidebar currentView={currentView} selectItem={selectItem} setCatSelect={setCatSelect} setItemSelect={setItemSelect} setTopsSelect={setTopsSelect} setBottomsSelect={setBottomsSelect} setRoomSelect={setRoomSelect} setOutfitData={setOutfitData} roomSelect={roomSelect} catSelect={catSelect} itemSelect={itemSelect} topsSelect={topsSelect} bottomsSelect={bottomsSelect} />
     </>
