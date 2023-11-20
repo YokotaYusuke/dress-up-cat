@@ -1,5 +1,4 @@
 import '../styles/App.css';
-import { useState, useEffect } from 'react';
 
 export default function MiddleAlbum({ currentView, outfitData, setOutfitData }) {
   const bgAlbum = '../img/bg/bg-album.PNG';
@@ -10,12 +9,12 @@ export default function MiddleAlbum({ currentView, outfitData, setOutfitData }) 
     // console.log('描画する前', outfitData);
     return (
       <div className="main__data-container" key={el.id}>
-        {el.title && <div className="main__data-title">{el.name}</div>}
-        {el.room && <img src={el.room} className="bg" alt="room" />}
-        {el.cat && <img src={el.cat} className="select__cat" alt="cat" />}
-        {el.item && <img src={el.item} className="select__cat" alt="item" />}
-        {el.tops && <img src={el.tops} className="select__cat" alt="tops" />}
-        {el.bottoms && <img src={el.bottoms} className="select__cat" alt="bottoms" />}
+        {el.outfit_name && <div className="main__data-title">{el.outfit_name}</div>}
+        {el.room_url && <img src={el.room_url} className="bg" alt="room" />}
+        {el.cat_url && <img src={el.cat_url} className="select__cat" alt="cat" />}
+        {el.item_url && <img src={el.item_url} className="select__cat" alt="item" />}
+        {el.tops_url && <img src={el.tops_url} className="select__cat" alt="tops" />}
+        {el.bottoms_url && <img src={el.bottoms_url} className="select__cat" alt="bottoms" />}
       </div>
     );
   });

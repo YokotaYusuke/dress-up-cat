@@ -3,6 +3,8 @@ const app = express();
 const PORT = process.env.PORT || 8080;
 app.use('/', express.static(__dirname + '/public'));
 app.use(express.json());
+const knex = require('./db/index.js');
+const OUTFIT_TABLE = 'outfit';
 
 // CORSエラーを解消する
 const cors = require('cors');
@@ -14,23 +16,15 @@ app.use(
   })
 );
 
-const dataObj = [];
-
-app.get('/api', (req, res) => {
-  console.log('サーバー接続OK');
-  res.end();
+app.post('/album', async (req, res) => {
+  await knex.insert(req.body).into(OUTFIT_TABLE);
+  const outfitList = await knex.select().from('outfit');
+  res.send(outfitList);
 });
 
-app.post('/album', (req, res) => {
-  req.body['id'] = dataObj.length;
-  // console.log('サーバー側', dataObj);
-
-  dataObj.push(req.body);
-  res.send(dataObj);
-});
-
-app.get('/allData', (req, res) => {
-  res.send(dataObj);
+app.get('/allData', async (req, res) => {
+  const outfitList = await knex.select().from('outfit');
+  res.send(outfitList);
 });
 
 app.listen(PORT, () => {
