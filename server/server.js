@@ -14,15 +14,19 @@ app.use(
   })
 );
 
-const obj = {
-  id: 1,
-  name: 'yusuke',
-  age: 26,
-};
+const dataObj = [];
 
 app.get('/api', (req, res) => {
-  console.log('サーバー来てる？？');
-  res.send(obj);
+  console.log('サーバー接続OK');
+  res.end();
+});
+
+app.post('/album', (req, res) => {
+  console.log('req.body===>', req.body);
+  req.body['id'] = dataObj.length;
+  console.log('サーバー側', dataObj);
+  dataObj.push(req.body);
+  res.send(dataObj);
 });
 
 app.listen(PORT, () => {
