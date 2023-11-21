@@ -1,4 +1,4 @@
-const path = require('node:path');
+const path = require('path');
 // console.log(__dirname);
 const room1 = path.resolve(__dirname, '../../../../../client/src/assets/img/room/room-1.png');
 const room2 = path.resolve(__dirname, '../../../../../client/src/assets/img/room/room-2.png');
