@@ -1,18 +1,36 @@
-const room1 = require('../../../../client/src/assets/room/room-1.png');
-const room2 = require('../../../../client/src/assets/room/room-2.png');
-const room3 = require('../../../../client/src/assets/room/room-3.png');
-const cat1 = require('../../../../client/src/assets/cat/cat-1.png');
-const cat2 = require('../../../../client/src/assets/cat/cat-2.png');
-const cat3 = require('../../../../client/src/assets/cat/cat-3.png');
-const item1 = require('../../../../client/src/assets/item/item-1.png');
-const item2 = require('../../../../client/src/assets/item/item-2.png');
-const item3 = require('../../../../client/src/assets/item/item-3.png');
-const tops1 = require('../../../../client/src/assets/tops/tops-1.png');
-const tops2 = require('../../../../client/src/assets/img/tops/tops-2.png');
-const tops3 = require('../../../../client/src/assets/img/tops/tops-3.png');
-const bottoms1 = require('../../../../client/src/assets/img/bottoms/bottoms-1.png');
-const bottoms2 = require('../../../../client/src/assets/img/bottoms/bottoms-2.png');
-const bottoms3 = require('../../../../client/src/assets/img/bottoms/bottoms-3.png');
+const path = require('path');
+// console.log(__dirname);
+const room1 = path.join(__dirname, '../../../client/src/assets/img/room/room-1.png');
+const room2 = path.join(__dirname, '../../../client/src/assets/img/room/room-2.png');
+const room3 = path.join(__dirname, '../../../client/src/assets/img/room/room-3.png');
+const cat1 = path.join(__dirname, '../../../../client/src/assets/img/cat/cat-1.png');
+const cat2 = path.join(__dirname, '../../../../client/src/assets/img/cat/cat-2.png');
+const cat3 = path.join(__dirname, '../../../../client/src/assets/img/cat/cat-3.png');
+const item1 = path.join(__dirname, '../../../../client/src/assets/img/item/item-1.png');
+const item2 = path.join(__dirname, '../../../../client/src/assets/img/item/item-2.png');
+const item3 = path.join(__dirname, '../../../../client/src/assets/img/item/item-3.png');
+const tops1 = path.join(__dirname, '../../../../client/src/assets/img/tops/tops-1.png');
+const tops2 = path.join(__dirname, '../../../../client/src/assets/img/tops/tops-2.png');
+const tops3 = path.join(__dirname, '../../../../client/src/assets/img/tops/tops-3.png');
+const bottoms1 = path.join(__dirname, '../../../../client/src/assets/img/bottoms/bottoms-1.png');
+const bottoms2 = path.join(__dirname, '../../../../client/src/assets/img/bottoms/bottoms-2.png');
+const bottoms3 = path.join(__dirname, '../../../../client/src/assets/img/bottoms/bottoms-3.png');
+
+// const room1 = require('../../../../client/src/assets/img/room/room-1.png');
+// const room2 = require('../../../../client/src/assets/img/room/room-2.png');
+// const room3 = require('../../../../client/src/assets/img/room/room-3.png');
+// const cat1 = require('../../../../client/src/assets/img/cat/cat-1.png');
+// const cat2 = require('../../../../client/src/assets/img/cat/cat-2.png');
+// const cat3 = require('../../../../client/src/assets/img/cat/cat-3.png');
+// const item1 = require('../../../../client/src/assets/img/item/item-1.png');
+// const item2 = require('../../../../client/src/assets/img/item/item-2.png');
+// const item3 = require('../../../../client/src/assets/img/item/item-3.png');
+// const tops1 = require('../../../../client/src/assets/img/tops/tops-1.png');
+// const tops2 = require('../../../../client/src/assets/img/tops/tops-2.png');
+// const tops3 = require('../../../../client/src/assets/img/tops/tops-3.png');
+// const bottoms1 = require('../../../../client/src/assets/img/bottoms/bottoms-1.png');
+// const bottoms2 = require('../../../../client/src/assets/img/bottoms/bottoms-2.png');
+// const bottoms3 = require('../../../../client/src/assets/img/bottoms/bottoms-3.png');
 
 exports.seed = async function (knex) {
   // Deletes ALL existing entries
