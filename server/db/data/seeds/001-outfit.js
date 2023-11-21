@@ -1,3 +1,4 @@
+// 画像のurl取得出来ないので、一旦諦める
 const path = require('path');
 // console.log(__dirname);
 const room1 = path.resolve(__dirname, '../../../../../client/src/assets/img/room/room-1.png');
@@ -15,6 +16,8 @@ const tops3 = path.resolve(__dirname, '../../../../../client/src/assets/img/tops
 const bottoms1 = path.resolve(__dirname, '../../../../../client/src/assets/img/bottoms/bottoms-1.png');
 const bottoms2 = path.resolve(__dirname, '../../../../../client/src/assets/img/bottoms/bottoms-2.png');
 const bottoms3 = path.resolve(__dirname, '../../../../../client/src/assets/img/bottoms/bottoms-3.png');
+
+console.log('room1のurl', room1);
 
 // const room1 = require('../../../../client/src/assets/img/room/room-1.png');
 // const room2 = require('../../../../client/src/assets/img/room/room-2.png');

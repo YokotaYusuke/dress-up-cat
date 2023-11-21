@@ -15,7 +15,7 @@ export default function LeftSidebar({ currentView, setCurrentView, setOutfitData
     const method = 'GET';
     const serverUrl = 'http://localhost:8080'; // サーバー側のURL
 
-    //   fetch(`${serverUrl}/allData`, { method })
+    //   fetch(`http://localhost:8080/allData`, { method })
     //     .then((res) => res.json())
     //     .then((data) => setOutfitData(data));
     //   setCurrentView('ALBUM');

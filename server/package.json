@@ -15,7 +15,7 @@
     "makeMigration": "knex migrate:make --knexfile db/knexfile.js",
     "makeSeed": "knex seed:make  --knexfile db/knexfile.js",
     "client-install": "npm install --prefix ../client",
-    "build": "npm install && npm run migrate-latest && npm run seed-data"
+    "build": "npm install && npm run migrate-latest"
   },
   "keywords": [],
   "author": "",
