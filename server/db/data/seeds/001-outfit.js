@@ -16,10 +16,6 @@ const bottoms1 = path.resolve(__dirname, '../../../../../client/src/assets/img/b
 const bottoms2 = path.resolve(__dirname, '../../../../../client/src/assets/img/bottoms/bottoms-2.png');
 const bottoms3 = path.resolve(__dirname, '../../../../../client/src/assets/img/bottoms/bottoms-3.png');
 
-// const bottoms1 = path.join(__dirname, '../../../../client/src/assets/img/bottoms/bottoms-1.png');
-// const bottoms2 = path.join(__dirname, '../../../../client/src/assets/img/bottoms/bottoms-2.png');
-// const bottoms3 = path.join(__dirname, '../../../../client/src/assets/img/bottoms/bottoms-3.png');
-
 // const room1 = require('../../../../client/src/assets/img/room/room-1.png');
 // const room2 = require('../../../../client/src/assets/img/room/room-2.png');
 // const room3 = require('../../../../client/src/assets/img/room/room-3.png');
