@@ -3,7 +3,7 @@ const app = express();
 
 const setupServer = () => {
   // app.use('/', express.static(__dirname + '/public'));
-  app.use('/', express.static('../client/dist/'));
+  app.use('/', express.static('../client/dist'));
 
   app.use(express.json());
   const knex = require('./db/index.js');
