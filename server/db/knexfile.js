@@ -9,7 +9,7 @@ module.exports = {
     client: 'pg',
     connection: {
       user: process.env.POSTGRES_USER || 'postgres',
-      database: process.env.POSTGRES_DB || 'DressUpCat',
+      database: process.env.POSTGRES_DB || 'dressupcat',
     },
     migrations: {
       directory: './data/migrations',

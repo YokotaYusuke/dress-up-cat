@@ -1,4 +1,4 @@
-@startuml DressUpCat
+@startuml dressupcat
 left to right direction
 
 class outfit {
