@@ -4,6 +4,9 @@ const app = express();
 const setupServer = () => {
   // app.use('/', express.static(__dirname + '/public'));
   app.use('/', express.static('../client/dist'));
+  // imgがExpress側で静的ファイルとして認識できてないのが問題。
+  // imgをExpress
+  app.use('/', express.static('../client/img'));
 
   app.use(express.json());
   const knex = require('./db/index.js');
