@@ -24,7 +24,10 @@ export default function MiddleAlbum({ currentView, outfitData, setOutfitData }) 
     console.log('updateきた？');
     const method = 'GET';
 
-    fetch(`${serverUrl}/allData`, { method })
+    // fetch(`${serverUrl}/allData`, { method })
+    //   .then((res) => res.json())
+    //   .then((data) => setOutfitData(data));
+    fetch(`/allData`, { method })
       .then((res) => res.json())
       .then((data) => setOutfitData(data));
   };

@@ -23,7 +23,10 @@ export default function Save({ currentView, setOutfitData, roomSelect, catSelect
       'Content-Type': 'application/json',
     };
 
-    await fetch(`${serverUrl}/album`, { method, headers, body })
+    // await fetch(`${serverUrl}/album`, { method, headers, body })
+    //   .then((res) => res.json())
+    //   .then((data) => setOutfitData(data));
+    await fetch(`/album`, { method, headers, body })
       .then((res) => res.json())
       .then((data) => setOutfitData(data));
   };
