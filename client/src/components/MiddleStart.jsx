@@ -1,6 +1,7 @@
+import bgStart from '../assets/img/bg/bg-start.png';
+import bgBtn1 from '../assets/img/btn/btn-start.png';
+
 export default function MiddleStart({ currentView, handleBtnClick }) {
-  const bgStart = '../img/bg/bg-start.JPG';
-  const bgBtn1 = '../img/btn/btn-start.png';
   return (
     <>
       {currentView === 'START' ? <img src={bgStart} className="bg" alt="bg-start" /> : <></>}

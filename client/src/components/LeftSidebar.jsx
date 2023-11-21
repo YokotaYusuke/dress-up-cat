@@ -1,3 +1,7 @@
+import btn_go_start from '../assets/img/btn/btn-go-start.png';
+import btn_go_room from '../assets/img/btn/btn-go-room.png';
+import btn_go_album from '../assets/img/btn/btn-go-album.png';
+
 export default function LeftSidebar({ currentView, setCurrentView, setOutfitData }) {
   const handleStartClick = () => {
     setCurrentView('START');
@@ -20,9 +24,9 @@ export default function LeftSidebar({ currentView, setCurrentView, setOutfitData
   return (
     <div className="left-container">
       <div className="left__btn-container">
-        {currentView !== 'START' ? <img src="../img/btn/btn-go-start.png" className="left__btn" alt="bg-start" onClick={handleStartClick} /> : <></>}
-        {currentView !== 'START' ? <img src="../img/btn/btn-go-room.png" className="left__btn" alt="bg-start" onClick={handleSelectClick} /> : <></>}
-        {currentView !== 'START' ? <img src="../img/btn/btn-go-album.png" className="left__btn" alt="bg-start" onClick={handleAlbumClick} /> : <></>}
+        {currentView !== 'START' ? <img src={btn_go_start} className="left__btn" alt="bg-start" onClick={handleStartClick} /> : <></>}
+        {currentView !== 'START' ? <img src={btn_go_room} className="left__btn" alt="bg-start" onClick={handleSelectClick} /> : <></>}
+        {currentView !== 'START' ? <img src={btn_go_album} className="left__btn" alt="bg-start" onClick={handleAlbumClick} /> : <></>}
       </div>
     </div>
   );

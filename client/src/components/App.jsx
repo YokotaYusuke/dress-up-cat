@@ -1,4 +1,5 @@
-import { useState, useEffect } from 'react';
+import room from '../assets/img/room/room-1.png';
+import { useState } from 'react';
 import '../styles/App.css';
 import Middle from './Middle';
 import LeftSidebar from './LeftSidebar';
@@ -7,11 +8,11 @@ import RightSidebar from './RightSidebar';
 function App() {
   const [currentView, setCurrentView] = useState('START');
   const [selectItem, setSelectItem] = useState('');
-  const [catSelect, setCatSelect] = useState(); // '../img/cat/cat-1.png'
-  const [itemSelect, setItemSelect] = useState(); // ../img/item/item-5.png
-  const [topsSelect, setTopsSelect] = useState(); // ../img/tops/tops-1.png
-  const [bottomsSelect, setBottomsSelect] = useState(); // ../img/bottoms/bottoms-3.png
-  const [roomSelect, setRoomSelect] = useState('../img/room/room-1.png'); // '../img/bg/bg-start.JPG'
+  const [catSelect, setCatSelect] = useState();
+  const [itemSelect, setItemSelect] = useState();
+  const [topsSelect, setTopsSelect] = useState();
+  const [bottomsSelect, setBottomsSelect] = useState();
+  const [roomSelect, setRoomSelect] = useState(room);
   const [outfitData, setOutfitData] = useState([]);
 
   const handleBtnClick = () => {
@@ -23,7 +24,7 @@ function App() {
     setItemSelect(null);
     setTopsSelect(null);
     setBottomsSelect(null);
-    setRoomSelect('../img/room/room-1.png');
+    setRoomSelect(room);
   };
 
   return (

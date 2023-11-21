@@ -1,7 +1,8 @@
+import bg_album from '../assets/img/bg/bg-album.png';
+import btn_update from '../assets/img/btn/btn-update.png';
 import '../styles/App.css';
 
 export default function MiddleAlbum({ currentView, outfitData, setOutfitData }) {
-  const bgAlbum = '../img/bg/bg-album.PNG';
   const serverUrl = 'http://localhost:8080'; // サーバー側のURL
 
   // 保存された配列を展開して描画したい
@@ -30,8 +31,8 @@ export default function MiddleAlbum({ currentView, outfitData, setOutfitData }) 
 
   return (
     <>
-      {currentView === 'ALBUM' ? <img src="../img/btn/btn-update.png" className="main__album-btn" alt="btn-update" onClick={handleUpdateClick} /> : <></>}
-      {currentView === 'ALBUM' ? <img src={bgAlbum} className="bg" alt="bg-album" /> : <></>}
+      {currentView === 'ALBUM' ? <img src={btn_update} className="main__album-btn" alt="btn-update" onClick={handleUpdateClick} /> : <></>}
+      {currentView === 'ALBUM' ? <img src={bg_album} className="bg" alt="bg-album" /> : <></>}
       {currentView === 'ALBUM' ? <div className="main__album-container">{albumElemens}</div> : <></>}
     </>
   );

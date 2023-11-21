@@ -1,3 +1,4 @@
+import btn_save from '../assets/img/btn/btn-save.png';
 import '../styles/App.css';
 
 export default function Save({ currentView, setOutfitData, roomSelect, catSelect, itemSelect, topsSelect, bottomsSelect }) {
@@ -29,5 +30,5 @@ export default function Save({ currentView, setOutfitData, roomSelect, catSelect
 
   // alert('保存されました！');
 
-  return <>{currentView === 'SELECT' ? <img src="../img/btn/btn-save.png" className="left__btn" alt="btn-save" onClick={handleSaveClick} /> : <></>}</>;
+  return <>{currentView === 'SELECT' ? <img src={btn_save} className="left__btn" alt="btn-save" onClick={handleSaveClick} /> : <></>}</>;
 }
