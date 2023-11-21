@@ -8,11 +8,11 @@ import item1 from '../assets/img/item/item-1.png';
 import item2 from '../assets/img/item/item-2.png';
 import item3 from '../assets/img/item/item-3.png';
 import tops1 from '../assets/img/tops/tops-1.png';
-import tops2 from '../assets/img/tops/tops-2.png';
-import tops3 from '../assets/img/tops/tops-3.png';
-import bottoms1 from '../assets/img/bottoms/bottoms-1.png';
-import bottoms2 from '../assets/img/bottoms/bottoms-2.png';
-import bottoms3 from '../assets/img/bottoms/bottoms-3.png';
+import tops2 from '../../../../client/src/assets/img/tops/tops-2.png';
+import tops3 from '../../../../client/src/assets/img/tops/tops-3.png';
+import bottoms1 from '../../../../client/src/assets/img/bottoms/bottoms-1.png';
+import bottoms2 from '../../../../client/src/assets/img/bottoms/bottoms-2.png';
+import bottoms3 from '../../../../client/src/assets/img/bottoms/bottoms-3.png';
 
 exports.seed = async function (knex) {
   // Deletes ALL existing entries
