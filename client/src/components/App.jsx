@@ -1,9 +1,9 @@
-import room from '../assets/img/room/room-1.png';
 import { useState } from 'react';
 import '../styles/App.css';
 import Middle from './Middle';
 import LeftSidebar from './LeftSidebar';
 import RightSidebar from './RightSidebar';
+import room from '../assets/img/room/room-1.png';
 
 function App() {
   const [currentView, setCurrentView] = useState('START');

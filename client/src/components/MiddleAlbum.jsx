@@ -2,41 +2,50 @@ import bg_album from '../assets/img/bg/bg-album.png';
 import btn_update from '../assets/img/btn/btn-update.png';
 import '../styles/App.css';
 
-export default function MiddleAlbum({ currentView, outfitData, setOutfitData }) {
+export default function MiddleAlbum({ outfitData, setOutfitData }) {
   const serverUrl = 'http://localhost:8080'; // サーバー側のURL
+  const handleCatClick = () => {
+    console.log('クリックした！！');
+  };
 
-  // 保存された配列を展開して描画したい
-  const albumElemens = outfitData.map((el) => {
-    // console.log('描画する前', outfitData);
-    return (
-      <div className="main__data-container" key={el.id}>
-        {el.outfit_name && <div className="main__data-title">{el.outfit_name}</div>}
-        {el.room_url && <img src={el.room_url} className="bg" alt="room" />}
-        {el.cat_url && <img src={el.cat_url} className="select__cat" alt="cat" />}
-        {el.item_url && <img src={el.item_url} className="select__cat" alt="item" />}
-        {el.tops_url && <img src={el.tops_url} className="select__cat" alt="tops" />}
-        {el.bottoms_url && <img src={el.bottoms_url} className="select__cat" alt="bottoms" />}
-      </div>
-    );
-  });
+  // outfitData配列を逆順にしてから描画する
+  const albumElemens = outfitData
+    .slice()
+    .reverse()
+    .map((el) => {
+      return (
+        <div className="main__data-container" key={el.id}>
+          <div className="main__data-click" onClick={handleCatClick}></div>
+          {el.outfit_name && <div className="main__data-title">{el.outfit_name}</div>}
+          {el.room_url && <img src={el.room_url} className="bg" alt="room" />}
+          {el.cat_url && <img src={el.cat_url} className="select__cat" alt="cat" />}
+          {el.item_url && <img src={el.item_url} className="select__cat" alt="item" />}
+          {el.tops_url && <img src={el.tops_url} className="select__cat" alt="tops" />}
+          {el.bottoms_url && <img src={el.bottoms_url} className="select__cat" alt="bottoms" />}
+        </div>
+      );
+    });
 
   const handleUpdateClick = () => {
     console.log('updateきた？');
     const method = 'GET';
 
-    // fetch(`${serverUrl}/allData`, { method })
-    //   .then((res) => res.json())
-    //   .then((data) => setOutfitData(data));
-    fetch(`/allData`, { method })
+    // 開発用
+    fetch(`${serverUrl}/allData`, { method })
       .then((res) => res.json())
       .then((data) => setOutfitData(data));
+
+    // 本番用
+    // fetch(`/allData`, { method })
+    //   .then((res) => res.json())
+    //   .then((data) => setOutfitData(data));
   };
 
   return (
     <>
-      {currentView === 'ALBUM' ? <img src={btn_update} className="main__album-btn" alt="btn-update" onClick={handleUpdateClick} /> : <></>}
-      {currentView === 'ALBUM' ? <img src={bg_album} className="bg" alt="bg-album" /> : <></>}
-      {currentView === 'ALBUM' ? <div className="main__album-container">{albumElemens}</div> : <></>}
+      <img src={btn_update} className="main__album-btn" alt="btn-update" onClick={handleUpdateClick} />
+      <img src={bg_album} className="bg" alt="bg-album" />
+      <div className="main__album-container">{albumElemens}</div>
     </>
   );
 }

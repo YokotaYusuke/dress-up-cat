@@ -2,6 +2,7 @@ import '../styles/App.css';
 import room1 from '../assets/img/room/room-1.png';
 import room2 from '../assets/img/room/room-2.png';
 import room3 from '../assets/img/room/room-3.png';
+import room4 from '../assets/img/room/room-4.png';
 import cat1 from '../assets/img/cat/cat-1.png';
 import cat2 from '../assets/img/cat/cat-2.png';
 import cat3 from '../assets/img/cat/cat-3.png';
@@ -54,6 +55,7 @@ export default function SelectItem(props) {
               <img className="item" src={room1} alt="room-1" onClick={handleImgClick} />
               <img className="item" src={room2} alt="room-2" onClick={handleImgClick} />
               <img className="item" src={room3} alt="room-3" onClick={handleImgClick} />
+              <img className="item" src={room4} alt="room-4" onClick={handleImgClick} />
             </>
           ) : (
             <></>

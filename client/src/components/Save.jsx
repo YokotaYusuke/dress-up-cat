@@ -1,37 +1,53 @@
 import btn_save from '../assets/img/btn/btn-save.png';
 import '../styles/App.css';
 
-export default function Save({ currentView, setOutfitData, roomSelect, catSelect, itemSelect, topsSelect, bottomsSelect }) {
+export default function Save({ setOutfitData, roomSelect, catSelect, itemSelect, topsSelect, bottomsSelect }) {
   const serverUrl = 'http://localhost:8080'; // サーバー側のURL
 
   const handleSaveClick = async () => {
-    // 実際(idはサーバーで振る)
-    const obj = {
-      outfit_name: 'にゃんこ',
-      create_date: new Date(),
-      room_url: roomSelect,
-      cat_url: catSelect,
-      item_url: itemSelect,
-      tops_url: topsSelect,
-      bottoms_url: bottomsSelect,
-    };
+    if (!catSelect) {
+      window.alert('にゃんこがいません！');
+    } else {
+      const outfitname = window.prompt('作成したコーデに名前を付けてください');
 
-    const method = 'POST';
-    const body = JSON.stringify(obj);
-    const headers = {
-      Accept: 'application/json',
-      'Content-Type': 'application/json',
-    };
+      if (outfitname !== null) {
+        const obj = {
+          outfit_name: outfitname || '無名のにゃんこ',
+          create_date: new Date(),
+          room_url: roomSelect,
+          cat_url: catSelect,
+          item_url: itemSelect,
+          tops_url: topsSelect,
+          bottoms_url: bottomsSelect,
+        };
 
-    // await fetch(`${serverUrl}/album`, { method, headers, body })
-    //   .then((res) => res.json())
-    //   .then((data) => setOutfitData(data));
-    await fetch(`/album`, { method, headers, body })
-      .then((res) => res.json())
-      .then((data) => setOutfitData(data));
+        const method = 'POST';
+        const body = JSON.stringify(obj);
+        const headers = {
+          Accept: 'application/json',
+          'Content-Type': 'application/json',
+        };
+
+        // 開発用
+        await fetch(`${serverUrl}/album`, { method, headers, body })
+          .then((res) => res.json())
+          .then((data) => setOutfitData(data));
+
+        // 本番用
+        // await fetch(`/album`, { method, headers, body })
+        //   .then((res) => res.json())
+        //   .then((data) => setOutfitData(data));
+
+        window.alert('コーデが"おもいで"に保存されました！');
+      } else {
+        window.alert('保存がキャンセルされました');
+      }
+    }
   };
 
-  // alert('保存されました！');
-
-  return <>{currentView === 'SELECT' ? <img src={btn_save} className="left__btn" alt="btn-save" onClick={handleSaveClick} /> : <></>}</>;
+  return (
+    <>
+      <img src={btn_save} className="left__btn" alt="btn-save" onClick={handleSaveClick} />
+    </>
+  );
 }
