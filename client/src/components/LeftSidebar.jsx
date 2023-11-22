@@ -3,7 +3,7 @@ import btn_go_room from '../assets/img/btn/btn-go-room.png';
 import btn_go_album from '../assets/img/btn/btn-go-album.png';
 
 export default function LeftSidebar({ currentView, setCurrentView, setOutfitData }) {
-  let PORT;
+  let PORT = '';
   if (process.env.NODE_ENV === 'development') {
     PORT = 'http://localhost:8080';
   }

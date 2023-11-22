@@ -2,7 +2,7 @@ import btn_save from '../assets/img/btn/btn-save.png';
 import '../styles/App.css';
 
 export default function Save({ setOutfitData, roomSelect, catSelect, itemSelect, topsSelect, bottomsSelect }) {
-  let PORT;
+  let PORT = '';
   if (process.env.NODE_ENV === 'development') {
     PORT = 'http://localhost:8080';
   }

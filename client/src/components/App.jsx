@@ -28,6 +28,8 @@ function App() {
     setRoomSelect(room);
   };
 
+  console.log('process.env.NODE_ENV', process.env.NODE_ENV);
+
   return (
     <>
       <LeftSidebar currentView={currentView} setCurrentView={setCurrentView} setOutfitData={setOutfitData} />

@@ -4,7 +4,7 @@ import '../styles/App.css';
 
 export default function MiddleAlbum({ outfitData, setOutfitData, setAlbumSelect }) {
   // console.log('process.env.NODE_ENV', process.env.NODE_ENV);
-  let PORT;
+  let PORT = '';
   if (process.env.NODE_ENV === 'development') {
     PORT = 'http://localhost:8080';
   }
