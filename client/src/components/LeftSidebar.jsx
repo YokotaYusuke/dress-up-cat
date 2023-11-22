@@ -3,10 +3,7 @@ import btn_go_room from '../assets/img/btn/btn-go-room.png';
 import btn_go_album from '../assets/img/btn/btn-go-album.png';
 
 export default function LeftSidebar({ currentView, setCurrentView, setOutfitData }) {
-  let PORT = '';
-  if (process.env.NODE_ENV === 'development') {
-    PORT = 'http://localhost:8080';
-  }
+  const PORT = 'http://localhost:8080';
 
   const handleStartClick = () => {
     setCurrentView('START');
@@ -20,16 +17,16 @@ export default function LeftSidebar({ currentView, setCurrentView, setOutfitData
     const method = 'GET';
 
     // 開発用
-    fetch(`${PORT}/allData`, { method })
-      .then((res) => res.json())
-      .then((data) => setOutfitData(data));
-    setCurrentView('ALBUM');
-
-    // 本番用
-    // fetch(`/allData`, { method })
+    // fetch(`${PORT}/allData`, { method })
     //   .then((res) => res.json())
     //   .then((data) => setOutfitData(data));
     // setCurrentView('ALBUM');
+
+    // 本番用
+    fetch(`/allData`, { method })
+      .then((res) => res.json())
+      .then((data) => setOutfitData(data));
+    setCurrentView('ALBUM');
   };
 
   return (

@@ -4,10 +4,7 @@ import '../styles/App.css';
 
 export default function MiddleAlbum({ outfitData, setOutfitData, setAlbumSelect }) {
   // console.log('process.env.NODE_ENV', process.env.NODE_ENV);
-  let PORT = '';
-  if (process.env.NODE_ENV === 'development') {
-    PORT = 'http://localhost:8080';
-  }
+  const PORT = 'http://localhost:8080';
 
   const handleCatClick = async (event) => {
     console.log('クリックした！！');
@@ -17,14 +14,14 @@ export default function MiddleAlbum({ outfitData, setOutfitData, setAlbumSelect 
 
     // 追加分 '/allData/:id'
     // 開発用
-    await fetch(`${PORT}/allData/${selectId}`, { method })
-      .then((res) => res.json())
-      .then((data) => setAlbumSelect(data));
-
-    // 本番用
-    // await fetch(`/allData/${selectId}`, { method })
+    // await fetch(`${PORT}/allData/${selectId}`, { method })
     //   .then((res) => res.json())
     //   .then((data) => setAlbumSelect(data));
+
+    // 本番用
+    await fetch(`/allData/${selectId}`, { method })
+      .then((res) => res.json())
+      .then((data) => setAlbumSelect(data));
   };
 
   // outfitData配列を逆順にしてから描画する
@@ -50,14 +47,14 @@ export default function MiddleAlbum({ outfitData, setOutfitData, setAlbumSelect 
     const method = 'GET';
 
     // 開発用
-    fetch(`${PORT}/allData`, { method })
-      .then((res) => res.json())
-      .then((data) => setOutfitData(data));
-
-    // 本番用
-    // fetch(`/allData`, { method })
+    // fetch(`${PORT}/allData`, { method })
     //   .then((res) => res.json())
     //   .then((data) => setOutfitData(data));
+
+    // 本番用
+    fetch(`/allData`, { method })
+      .then((res) => res.json())
+      .then((data) => setOutfitData(data));
   };
 
   return (
