@@ -21,12 +21,6 @@ const setupServer = () => {
     })
   );
 
-  app.post('/album', async (req, res) => {
-    await knex.insert(req.body).into(OUTFIT_TABLE);
-    const outfitList = await knex.select().from(OUTFIT_TABLE);
-    res.send(outfitList);
-  });
-
   app.get('/allData', async (req, res) => {
     const outfitList = await knex.select().from(OUTFIT_TABLE);
     res.send(outfitList);
@@ -38,6 +32,11 @@ const setupServer = () => {
     res.send(outfitItem);
   });
 
+  app.post('/album', async (req, res) => {
+    await knex.insert(req.body).into(OUTFIT_TABLE);
+    const outfitList = await knex.select().from(OUTFIT_TABLE);
+    res.send(outfitList);
+  });
   return app;
 };
 
