@@ -3,7 +3,12 @@ import btn_update from '../assets/img/btn/btn-update.png';
 import '../styles/App.css';
 
 export default function MiddleAlbum({ outfitData, setOutfitData, setAlbumSelect }) {
-  const serverUrl = 'http://localhost:8080'; // サーバー側のURL
+  // console.log('process.env.NODE_ENV', process.env.NODE_ENV);
+  let PORT;
+  if (process.env.NODE_ENV === 'development') {
+    PORT = 'http://localhost:8080';
+  }
+
   const handleCatClick = async (event) => {
     console.log('クリックした！！');
 
@@ -12,7 +17,7 @@ export default function MiddleAlbum({ outfitData, setOutfitData, setAlbumSelect 
 
     // 追加分 '/allData/:id'
     // 開発用
-    await fetch(`${serverUrl}/allData/${selectId}`, { method })
+    await fetch(`${PORT}/allData/${selectId}`, { method })
       .then((res) => res.json())
       .then((data) => setAlbumSelect(data));
 
@@ -45,7 +50,7 @@ export default function MiddleAlbum({ outfitData, setOutfitData, setAlbumSelect 
     const method = 'GET';
 
     // 開発用
-    fetch(`${serverUrl}/allData`, { method })
+    fetch(`${PORT}/allData`, { method })
       .then((res) => res.json())
       .then((data) => setOutfitData(data));
 

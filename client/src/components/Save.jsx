@@ -2,7 +2,10 @@ import btn_save from '../assets/img/btn/btn-save.png';
 import '../styles/App.css';
 
 export default function Save({ setOutfitData, roomSelect, catSelect, itemSelect, topsSelect, bottomsSelect }) {
-  const serverUrl = 'http://localhost:8080'; // サーバー側のURL
+  let PORT;
+  if (process.env.NODE_ENV === 'development') {
+    PORT = 'http://localhost:8080';
+  }
 
   const handleSaveClick = async () => {
     if (!catSelect) {
@@ -29,7 +32,7 @@ export default function Save({ setOutfitData, roomSelect, catSelect, itemSelect,
         };
 
         // 開発用
-        await fetch(`${serverUrl}/album`, { method, headers, body })
+        await fetch(`${PORT}/album`, { method, headers, body })
           .then((res) => res.json())
           .then((data) => setOutfitData(data));
 
