@@ -32,6 +32,12 @@ const setupServer = () => {
     res.send(outfitList);
   });
 
+  app.get('/allData/:id', async (req, res) => {
+    const id = req.params.id;
+    const outfitItem = await knex.select().from(OUTFIT_TABLE).where({ id: id }).first();
+    res.send(outfitItem);
+  });
+
   return app;
 };
 

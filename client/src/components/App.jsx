@@ -14,6 +14,7 @@ function App() {
   const [bottomsSelect, setBottomsSelect] = useState();
   const [roomSelect, setRoomSelect] = useState(room);
   const [outfitData, setOutfitData] = useState([]);
+  const [albumSelect, setAlbumSelect] = useState();
 
   const handleBtnClick = () => {
     setCurrentView('SELECT');
@@ -30,8 +31,8 @@ function App() {
   return (
     <>
       <LeftSidebar currentView={currentView} setCurrentView={setCurrentView} setOutfitData={setOutfitData} />
-      <Middle currentView={currentView} setSelectItem={setSelectItem} handleBtnClick={handleBtnClick} roomSelect={roomSelect} catSelect={catSelect} itemSelect={itemSelect} topsSelect={topsSelect} bottomsSelect={bottomsSelect} handleResetClick={handleResetClick} outfitData={outfitData} setOutfitData={setOutfitData} />
-      <RightSidebar currentView={currentView} selectItem={selectItem} setCatSelect={setCatSelect} setItemSelect={setItemSelect} setTopsSelect={setTopsSelect} setBottomsSelect={setBottomsSelect} setRoomSelect={setRoomSelect} setOutfitData={setOutfitData} roomSelect={roomSelect} catSelect={catSelect} itemSelect={itemSelect} topsSelect={topsSelect} bottomsSelect={bottomsSelect} />
+      <Middle currentView={currentView} setSelectItem={setSelectItem} handleBtnClick={handleBtnClick} roomSelect={roomSelect} catSelect={catSelect} itemSelect={itemSelect} topsSelect={topsSelect} bottomsSelect={bottomsSelect} handleResetClick={handleResetClick} outfitData={outfitData} setOutfitData={setOutfitData} setAlbumSelect={setAlbumSelect} />
+      <RightSidebar currentView={currentView} selectItem={selectItem} setCatSelect={setCatSelect} setItemSelect={setItemSelect} setTopsSelect={setTopsSelect} setBottomsSelect={setBottomsSelect} setRoomSelect={setRoomSelect} setOutfitData={setOutfitData} roomSelect={roomSelect} catSelect={catSelect} itemSelect={itemSelect} topsSelect={topsSelect} bottomsSelect={bottomsSelect} outfitData={outfitData} albumSelect={albumSelect} />
     </>
   );
 }
